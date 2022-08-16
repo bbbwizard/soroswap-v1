@@ -1,0 +1,7 @@
+@use '../../styles/_variables' as *;
+
+.page {
+  background-color: $bgColor;
+  width: 100%;
+  min-height: 100vh;
+}

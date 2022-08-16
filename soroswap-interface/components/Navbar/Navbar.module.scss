@@ -1,0 +1,255 @@
+@use '../../styles/_variables' as *;
+@use '../../styles/_breakpoints' as *;
+
+.header {
+  padding: 0 24px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 88px;
+  z-index: 3;
+  align-items: center;
+  justify-content: space-between;
+  & a {
+    display: flex;
+  }
+  & > div {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    &:last-child {
+      & button {
+        height: 40px;
+        border-radius: 20px;
+        &:first-child {
+          padding: 0 16px;
+          margin-right: 16px;
+          & svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+          }
+        }
+        &:last-child {
+          padding: 0 32px;
+        }
+        & p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  @include media("screen", "<tablet") {
+    align-items: center;
+  }
+  @include media("screen", "<phone") {
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin: 0;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: fit-content;
+    font-weight: 600;
+    white-space: nowrap;
+    letter-spacing: normal;
+  }
+}
+
+.mainMenu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  & .menuItem {
+    border-radius: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+  
+    p {
+      width: 70px;
+      text-align: center;
+      font-size: 1rem;
+      margin: 0;
+      text-decoration: none;
+      color: rgb(195, 197, 203);
+      font-size: 1rem;
+      font-weight: 500;
+      white-space: nowrap;
+      letter-spacing: normal;
+    }
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
+  }
+  & a {
+    text-decoration: none;
+    margin-right: 12px;
+    color: $textSecondary;
+    border-radius: 10px;
+
+    &.active {
+      p {
+        font-weight: 600;
+        color: rgb(255, 255, 255);
+      }
+    }
+    &:last-child {
+      margin-right: 0,
+    }
+  }
+}
+
+.accountDetails {
+  border: solid 1px $grey2;
+  // padding: 0 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(25, 27, 31);
+  border-radius: 16px;
+  white-space: nowrap;
+  width: 100%;
+  height: 40px;
+
+  & .stxBalance {
+    display: block;
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    padding-left: 0.75rem;
+    padding-right: 0.4rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: rgb(255, 255, 255);
+    flex-shrink: 0;
+
+    & p {
+      margin: 0;
+      font-size: 16px;
+    }
+  }
+
+  & .accountAddress {
+    background-color: rgb(33, 36, 41);
+    border: 1px solid rgb(33, 36, 41);
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 36px;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 14px;
+    cursor: pointer;
+    user-select: none;
+    margin-right: 2px;
+    margin-left: 2px;
+
+    &:hover {
+      border: 1px solid rgb(33, 114, 229);
+    }
+
+    & p {
+      overflow: hidden;
+      white-space: nowrap;
+      user-select: none;
+      font-weight: 500;
+      width: fit-content;
+      font-size: 1rem;
+    }
+  }
+}
+
+.connectButton {
+  width: 152px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  &:hover .wrongNetworkContent {
+    display: block;
+  }
+}
+
+.mobileMenuContainer {
+  margin: 0px auto;
+  background-color: rgb(25, 27, 31);
+  border: 1px solid rgb(44, 47, 54);
+  box-shadow: rgb(0 0 0 / 2%) 0px 6px 10px;
+  position: fixed;
+  right: 50%;
+  transform: translate(50%, -50%);
+  bottom: 0;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  justify-self: center;
+  z-index: 99;
+  border-radius: 16px;
+  overflow: auto;
+
+  .mobileMenu {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    padding: 2px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    justify-self: center;
+    outline: none;
+    white-space: nowrap;
+
+    & a {
+      text-decoration: none;
+      color: $textSecondary;
+      font-weight: bold;
+      padding: 8px 12px;
+      overflow: hidden;
+      cursor: pointer;
+
+      & p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 500;
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+
+      &.active {
+        color: $primary;
+        border-radius: 14px;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: rgb(33, 36, 41);
+
+        & p {
+          color: $primary;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

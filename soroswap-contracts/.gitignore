@@ -1,0 +1,8 @@
+
+# **/settings/Devnet.toml
+**/settings/Mainnet.toml
+**/settings/Testnet.toml
+.requirements/
+history.txt
+deployments/
+.vscode/

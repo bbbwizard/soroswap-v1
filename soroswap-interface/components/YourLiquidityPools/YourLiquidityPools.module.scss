@@ -1,0 +1,37 @@
+.yourLiqTitle {
+  margin: 0px;
+  min-width: 0px;
+  font-weight: 500;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.connectWalletHint {
+  font-size: 16px;
+}
+
+.connectWalletButton {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  flex-wrap: nowrap;
+  z-index: 1;
+
+  & button {
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  & .connectWalletButtonLabel {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+
+  }
+}

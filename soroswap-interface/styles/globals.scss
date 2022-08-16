@@ -1,0 +1,155 @@
+@use './_breakpoints' as *;
+@use './_variables' as *;
+
+/* Hide spinner buttons on number inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.pageWrapper {
+  max-width: 1312px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 24px auto;
+  padding: 0 32px;
+  @include media("screen", "<phone") {
+    padding: 0 12px;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-error {
+  background-color: $errorMain;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-secondary1 {
+  background-color: $secondary1;
+}
+
+.bg-secondary2 {
+  background-color: $secondary2;
+}
+
+// swap
+.wrapper {
+  width: 420px;
+  padding: 20px;
+  background: $bgPalette;
+  border-radius: 30px;
+  box-shadow: rgb(0 0 0 / 1%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 4px 8px, rgb(0 0 0 / 4%) 0px 16px 24px, rgb(0 0 0 / 1%) 0px 24px 32px;
+}
+
+@media only screen and (max-width: 420px) {
+  .wrapper {
+    width: 100%;
+    min-width: 350px;
+  }
+}
+
+.headingItem {
+  cursor: pointer;
+  display: flex;
+}
+
+// faucet
+.faucet-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  flex-wrap: nowrap;
+  & button {
+    border-radius: 12px;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 1;
+
+    & .faucet-button-label {
+      font-size: 20px;
+      font-weight: 500;
+      color: #fff;
+      box-sizing: border-box;
+      margin: 0px;
+      min-width: 0px;
+    }
+
+    &.Mui-disabled {
+      color: $textSecondary;
+      opacity: 0.5;
+
+      &.faucet-button-label {
+        color: rgb(108, 114, 132);
+      }
+    }
+  }
+}

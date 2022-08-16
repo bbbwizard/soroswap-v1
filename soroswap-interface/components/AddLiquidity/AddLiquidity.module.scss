@@ -1,0 +1,53 @@
+@use '../../styles/_variables' as *;
+@use '../../styles/_breakpoints' as *;
+
+.exchangeLiquidity {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px auto;
+  z-index: 2;
+  position: relative;
+}
+
+.liquidityButtonWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  flex-wrap: nowrap;
+  & button {
+    border-radius: 12px;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 1;
+
+    & .liquidityButtonLabel {
+      font-size: 20px;
+      font-weight: 500;
+      color: #fff;
+      box-sizing: border-box;
+      margin: 0px;
+      min-width: 0px;
+
+    }
+
+    &.Mui-disabled {
+      color: $textSecondary;
+      opacity: 0.5;
+
+      &.liquidityButtonLabel {
+        color: rgb(108, 114, 132);
+      }
+    }
+  }
+}
+
+.liquidityPrice {
+  & p {
+    display: inline-block;
+    margin: 0;
+  }
+}

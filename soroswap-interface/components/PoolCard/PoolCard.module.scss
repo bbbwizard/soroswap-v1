@@ -1,0 +1,69 @@
+@use '../../styles/_variables' as *;
+@use '../../styles/_breakpoints' as *;
+
+.pairItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(173, 168, 228, 0.3);
+
+  .pairLogoWrapper {
+    margin-right: 12px;
+    position: relative;
+    width: 66px;
+    height: 40px;
+    padding: 4px 0;
+
+    .pairLogo {
+      position: absolute;
+      box-sizing: border-box;
+      display: inline-block;
+      overflow: hidden;
+      width: 32px;
+      height: 32px;
+      background: none;
+      opacity: 1;
+      border: 0px;
+      margin: 0px;
+      padding: 0px;
+      // position: relative;
+    }
+
+    .pairLogo:nth-child(2) {
+      margin-left: 24px;
+      z-index: 1;
+    }
+  }
+  
+  .pairName {
+    color: #fff;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+  }
+
+  .pairButtonWrapper {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+
+    & button {
+      border: 1px solid $primary;
+      background-color: transparent;
+      opacity: 0.8;
+      border-radius: 6px;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      & .pairButtonLabel {
+        font-size: 14px;
+        color: $primary;
+      }
+    }
+  }
+}

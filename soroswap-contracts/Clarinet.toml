@@ -1,0 +1,67 @@
+[project]
+name = "soroswap"
+authors = []
+description = ""
+telemetry = true
+requirements = []
+boot_contracts = ["pox", "costs-v2", "bns"]
+
+[project.cache_location]
+path = ".requirements"
+
+[contracts.sip-010]
+path = "contracts/interfaces/sip-010.clar"
+depends_on = []
+
+[contracts.ownable]
+path = "contracts/interfaces/ownable.clar"
+depends_on = []
+
+[contracts.pair]
+path = "contracts/interfaces/pair.clar"
+depends_on = []
+
+[contracts.pair-wbtc-wstx]
+path = "contracts/pairs/pair-wbtc-wstx.clar"
+depends_on = ["ownable", "pair"]
+
+[contracts.pair-wbtc-wusdc]
+path = "contracts/pairs/pair-wbtc-wusdc.clar"
+depends_on = ["ownable", "pair"]
+
+[contracts.pair-wusdc-wstx]
+path = "contracts/pairs/pair-wusdc-wstx.clar"
+depends_on = ["ownable", "pair"]
+
+[contracts.wbtc]
+path = "contracts/tokens/wbtc.clar"
+depends_on = ["ownable", "sip-010"]
+
+[contracts.wstx]
+path = "contracts/tokens/wstx.clar"
+depends_on = ["ownable", "sip-010"]
+
+[contracts.wusdc]
+path = "contracts/tokens/wusdc.clar"
+depends_on = ["ownable", "sip-010"]
+
+[contracts.soroswap]
+path = "contracts/swap/soroswap.clar"
+depends_on = ["sip-010", "pair"]
+
+[contracts.faucet]
+path = "contracts/swap/faucet.clar"
+depends_on = ["sip-010"]
+
+[repl]
+costs_version = 2
+parser_version = 2
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false

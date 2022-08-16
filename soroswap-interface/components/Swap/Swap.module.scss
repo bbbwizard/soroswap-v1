@@ -1,0 +1,88 @@
+@use '../../styles/_variables' as *;
+@use '../../styles/_breakpoints' as *;
+
+.exchangeSwap {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px auto;
+  z-index: 2;
+  position: relative;
+}
+
+.swapPriceWrapper {
+  width: 100%;
+  padding: 0.25rem 0.75rem 0px;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+
+  .swapPriceLabel {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(195, 197, 203);
+  }
+
+  .swapPriceContent {
+    display: flex;
+    .swapPrice {
+      box-sizing: border-box;
+      margin: 0px;
+      min-width: 0px;
+      font-weight: 500;
+      font-size: 14px;
+      color: rgb(195, 197, 203);
+    }
+  
+    .swapPriceSwitchIcon {
+      box-sizing: border-box;
+      margin-left: 0.4rem;
+      cursor: pointer;
+      color: rgb(195, 197, 203);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.swapButtonWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  width: 100%;
+  flex-wrap: nowrap;
+
+  & button {
+    border-radius: 12px;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 1;
+
+    & .swapButtonLabel {
+      font-size: 20px;
+      font-weight: 500;
+      color: #fff;
+      box-sizing: border-box;
+      margin: 0px;
+      min-width: 0px;
+
+    }
+
+    &.Mui-disabled {
+      color: $textSecondary;
+      opacity: 0.5;
+
+      &.swapButtonLabel {
+        color: rgb(108, 114, 132);
+      }
+    }
+  }
+}
