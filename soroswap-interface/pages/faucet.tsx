@@ -38,7 +38,7 @@ function isReachLimit(currency, amount) {
 
 // todo only for testnet
 export default function FaucetPage() {
-  const { address } = useStacks()
+  const { address, addPendingTransaction } = useStacks()
   const { doOpenAuth, doContractCall } = useConnect()
   const { addTransactionToast } = useTransactionToasts()
   const [currency0, setCurrency0] = useState(undefined)
@@ -58,6 +58,7 @@ export default function FaucetPage() {
       (data: any) => {
         console.log(data)
         const { txId } = data || {}
+        addPendingTransaction(txId)
         addTransactionToast(txId, `Please wait a few moment`)
       }
     )
