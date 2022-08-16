@@ -25,14 +25,14 @@ function getPostConditions(
     postConditions.push(
       makeStandardSTXPostCondition(
         address,
-        FungibleConditionCode.Equal,
+        FungibleConditionCode.LessEqual,
         amountX
       )
     )
     postConditions.push(
       makeStandardFungiblePostCondition(
         address,
-        FungibleConditionCode.Equal,
+        FungibleConditionCode.LessEqual,
         amountX,
         createAssetInfo(
           currencyX.contract,
@@ -60,14 +60,14 @@ function getPostConditions(
     postConditions.push(
       makeStandardSTXPostCondition(
         address,
-        FungibleConditionCode.Equal,
+        FungibleConditionCode.LessEqual,
         amountY
       )
     )
     postConditions.push(
       makeStandardFungiblePostCondition(
         address,
-        FungibleConditionCode.Equal,
+        FungibleConditionCode.LessEqual,
         amountY,
         createAssetInfo(
           currencyY.contract,
@@ -90,6 +90,7 @@ function getPostConditions(
       )
     )
   }
+  
   return postConditions
 }
 
@@ -132,7 +133,7 @@ function buildAddLiquidityRequest(
     amountX.value,
     amountY.value,
     currency0,
-    currency1
+    currency1,
   )
   return {
     network,
