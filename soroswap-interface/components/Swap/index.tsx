@@ -102,7 +102,8 @@ function Swap() {
   }
 
   const handleMaxInput = () => {
-    const userCurrency0BalanceX = balances?.[currency0.contractName] || 0
+    if (!currency0) return
+    const userCurrency0BalanceX = balances?.[currency0.contractName] / Math.pow(10, currency0.decimals) || 0
     if (!userCurrency0BalanceX) return
     setCurrency0Amount(userCurrency0BalanceX)
     calculateCurrency1Amount(userCurrency0BalanceX)
